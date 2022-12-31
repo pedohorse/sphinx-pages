@@ -124,10 +124,13 @@ if [ "$INPUT_CREATE_README" = true ] ; then
     echo ::endgroup::
 fi
 
+if [ "$INPUT_CREATE_NOJEKYLL" = true ] ; then
+    echo "touching .nojekyll"
+    touch .nojekyll
+fi
+
 # commit and push
 echo ::group::Push
-echo "touching .nojekyll"
-touch .nojekyll
 echo "git add ."
 git add .
 echo 'git commit --allow-empty -m "From $GITHUB_REF $docs_sha8"'
