@@ -17,6 +17,9 @@ inputs:
   install_extensions:
     description: 'Install Sphinx extensions listed in $source_dir/requirements.txt'
     default: true
+  create_nojekyll:
+    description: 'create .nojekyll file'
+    default: false
 outputs:
   name:
     description: 'Author name'
