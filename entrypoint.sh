@@ -126,6 +126,8 @@ fi
 
 # commit and push
 echo ::group::Push
+echo "touching .nojekyll"
+touch .nojekyll
 echo "git add ."
 git add .
 echo 'git commit --allow-empty -m "From $GITHUB_REF $docs_sha8"'
