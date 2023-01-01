@@ -47,10 +47,10 @@ author_email="$(git show --format=%ae -s)"
 docs_sha8="$(echo ${GITHUB_SHA} | cut -c 1-8)"
 
 # outputs
-echo "::set-output name=name::"$author_name""
-echo "::set-output name=email::"$author_email""
-echo "::set-output name=docs_sha::$(echo ${GITHUB_SHA})"
-echo "::set-output name=docs_sha8::"$docs_sha8""
+echo "name=$author_name" >> $GITHUB_OUTPUT
+echo "email=$author_email" >> $GITHUB_OUTPUT
+echo "docs_sha=$(echo ${GITHUB_SHA})" >> $GITHUB_OUTPUT
+echo "docs_sha8=$docs_sha8" >> $GITHUB_OUTPUT
 
 # checkout branch gh-pages
 echo ::group::Initializing branch gh-pages
